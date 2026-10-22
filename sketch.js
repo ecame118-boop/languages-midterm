@@ -94,7 +94,7 @@ function draw() {
     mark.y -= riverSpeed * seconds;
 
     if (mark.type === "paint") {
-      // Grow toward the final size.
+      // Grow to final size.
       mark.size +=
         (mark.finalSize - mark.size) *
         min(1, seconds * 7);
@@ -126,11 +126,12 @@ function draw() {
     drawingLayer.circle(mouseX, mouseY, 30);
   }
 
-  // Display our flat drawing layer on the WEBGL canvas.
+  // Display flat drawing layer on WEBGL canvas.
   background(249, 246, 239);
   image(drawingLayer, -width / 2, -height / 2);
 }
 
+//drawing layer, all lines starting with dot g
 function drawSplash(mark) {
   let g = drawingLayer;
   let c = colors[mark.colorIndex];
